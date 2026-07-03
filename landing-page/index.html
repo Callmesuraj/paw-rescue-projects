@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Rescue — Help for strays, day and night</title>
+  <meta name="description" content="Paw Rescue feeds, rescues, and treats stray animals across the city.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner">
+      <a href="#top" class="brand">
+        <span class="brand__dot"></span>
+        Paw Rescue
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">What We Do</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#contact" class="navbar__cta">Volunteer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="eyebrow">Helping strays, day and night</p>
+      <h1 class="hero__headline">Every stray deserves <span class="text-amber">a safe corner.</span></h1>
+      <p class="hero__sub">We feed, rescue, and treat stray animals across the city — because help shouldn't depend on the time of day.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Donate a Meal →</a>
+        <a href="#features" class="btn btn--ghost">See Our Work</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><p class="hero__stat-value">12k+</p><p class="hero__stat-label">Meals served</p></div>
+        <div class="hero__stat"><p class="hero__stat-value">800+</p><p class="hero__stat-label">Rescues</p></div>
+        <div class="hero__stat"><p class="hero__stat-value">24/7</p><p class="hero__stat-label">On call</p></div>
+      </div>
+    </div>
+    <div class="hero__paw" aria-hidden="true">
+      <svg viewBox="0 0 200 200" class="paw-svg">
+        <circle cx="100" cy="100" r="90" class="paw-glow-ring"/>
+        <circle cx="100" cy="100" r="65" class="paw-glow-ring-2"/>
+        <ellipse cx="100" cy="125" rx="38" ry="30" class="paw-shape"/>
+        <ellipse cx="62"  cy="88"  rx="16" ry="20" class="paw-shape"/>
+        <ellipse cx="88"  cy="72"  rx="16" ry="20" class="paw-shape"/>
+        <ellipse cx="112" cy="72"  rx="16" ry="20" class="paw-shape"/>
+        <ellipse cx="138" cy="88"  rx="16" ry="20" class="paw-shape"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container container--narrow">
+      <p class="eyebrow eyebrow--center">Who we are</p>
+      <h2 class="section-title text-center">We show up on the same streets, week after week.</h2>
+      <p class="about__text">Paw Rescue is a small, stubbornly consistent team. We go wherever animals need help — feeding the regulars, checking on the injured, and carrying the ones who can't wait until morning. No stray is "someone else's problem." They're ours.</p>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <p class="eyebrow eyebrow--center">What we do every day</p>
+      <h2 class="section-title text-center">Four ways we show up.</h2>
+      <div class="features__grid">
+        <article class="card reveal">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M24 6C17 6 12 11 12 18c0 8 12 24 12 24s12-16 12-24c0-7-5-12-12-12z"/><circle cx="24" cy="18" r="5"/></svg>
+          </div>
+          <h3 class="card__title">Feeding Drives</h3>
+          <p class="card__text">Fixed routes, every day, rain or heat. Regular meals mean fewer strays go hungry or wander into traffic.</p>
+        </article>
+        <article class="card reveal" style="--delay:0.08s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M24 6L40 14V26C40 36 33 42 24 44C15 42 8 36 8 26V14Z"/><path d="M18 24L23 29L31 18"/></svg>
+          </div>
+          <h3 class="card__title">Emergency Rescue</h3>
+          <p class="card__text">A 24/7 helpline for injured or trapped animals. Real humans, day or night, ready to come out.</p>
+        </article>
+        <article class="card reveal" style="--delay:0.16s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="24" r="18"/><path d="M24 16V32M16 24H32"/></svg>
+          </div>
+          <h3 class="card__title">Medical Aid</h3>
+          <p class="card__text">Mobile first-aid kits and a vet on call. Wounds get cleaned the same night, not whenever a clinic opens.</p>
+        </article>
+        <article class="card reveal" style="--delay:0.24s">
+          <div class="card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 20C14 14 19 10 24 14C29 10 34 14 34 20C34 28 24 36 24 36C24 36 14 28 14 20Z"/></svg>
+          </div>
+          <h3 class="card__title">Adoption Help</h3>
+          <p class="card__text">Gentle rehabilitation, behavior support, and careful matching with families who'll love them back.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-strip" id="stats">
+    <div class="container">
+      <div class="stats-strip__grid">
+        <div class="stat-item reveal"><p class="stat-item__value">12k+</p><p class="stat-item__label">Meals served</p></div>
+        <div class="stat-item reveal" style="--delay:0.08s"><p class="stat-item__value">800+</p><p class="stat-item__label">Rescues completed</p></div>
+        <div class="stat-item reveal" style="--delay:0.16s"><p class="stat-item__value">24/7</p><p class="stat-item__label">Always on call</p></div>
+        <div class="stat-item reveal" style="--delay:0.24s"><p class="stat-item__value text-sage">340+</p><p class="stat-item__label">Adoptions</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container container--narrow text-center">
+      <h2 class="section-title">You don't need a uniform to help.</h2>
+      <p class="cta__text">A two-hour walk once a week, a spare blanket, or ₹200 a month for food — every bit keeps a corner warm.</p>
+      <a href="mailto:hello@pawrescue.org" class="btn btn--primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <span class="brand"><span class="brand__dot"></span>Paw Rescue</span>
+      <ul class="footer__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">What We Do</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="footer__social">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="mailto:hello@pawrescue.org">Email</a></li>
+      </ul>
+    </div>
+    <p class="footer__bottom">© 2026 Paw Rescue. Demo project built for practice.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

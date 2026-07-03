@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Stray Risk — Paw Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav class="navbar__inner">
+      <a href="#" class="brand">
+        <span class="brand__dot"></span>
+        Paw Rescue
+      </a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero__eyebrow">Real-time weather conditions</p>
+      <h1 class="hero__title">How safe are strays <span class="text-amber">in your city</span> right now?</h1>
+      <p class="hero__sub">Enter your city to see current weather and how it affects stray animals on the streets today.</p>
+
+      <!-- SEARCH -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg class="search-box__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input
+            type="text"
+            id="cityInput"
+            class="search-box__input"
+            placeholder="e.g. Delhi, Mumbai, Bangalore..."
+            autocomplete="off"
+            aria-label="Enter city name"
+          >
+          <button class="search-box__btn" id="searchBtn" aria-label="Search">
+            Search
+          </button>
+        </div>
+        <p class="search-hint" id="searchHint"></p>
+      </div>
+    </section>
+
+    <!-- LOADING STATE -->
+    <div class="loading" id="loading" hidden>
+      <div class="loading__spinner"></div>
+      <p class="loading__text">Fetching weather data...</p>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div class="error-state" id="errorState" hidden>
+      <p class="error-state__icon">🌧️</p>
+      <p class="error-state__title" id="errorTitle">City not found</p>
+      <p class="error-state__text" id="errorText">Please check the city name and try again.</p>
+    </div>
+
+    <!-- RESULTS -->
+    <section class="results" id="results" hidden>
+
+      <!-- Weather card -->
+      <div class="weather-card" id="weatherCard">
+        <div class="weather-card__top">
+          <div>
+            <h2 class="weather-card__city" id="cityName"></h2>
+            <p class="weather-card__country" id="countryName"></p>
+          </div>
+          <img class="weather-card__icon" id="weatherIcon" src="" alt="">
+        </div>
+
+        <div class="weather-card__stats">
+          <div class="stat">
+            <p class="stat__value" id="temperature"></p>
+            <p class="stat__label">Temperature</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value" id="feelsLike"></p>
+            <p class="stat__label">Feels like</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value" id="humidity"></p>
+            <p class="stat__label">Humidity</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value" id="windSpeed"></p>
+            <p class="stat__label">Wind speed</p>
+          </div>
+        </div>
+
+        <p class="weather-card__desc" id="weatherDesc"></p>
+      </div>
+
+      <!-- Risk card -->
+      <div class="risk-card" id="riskCard">
+        <p class="risk-card__label">Stray Risk Level</p>
+        <div class="risk-badge" id="riskBadge">
+          <span class="risk-badge__dot"></span>
+          <span class="risk-badge__text" id="riskLevel"></span>
+        </div>
+        <p class="risk-card__reason" id="riskReason"></p>
+
+        <div class="risk-tips" id="riskTips">
+          <p class="risk-tips__title">What you can do today:</p>
+          <ul class="risk-tips__list" id="tipsList"></ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RECENT SEARCHES -->
+    <div class="recent" id="recentWrap" hidden>
+      <p class="recent__label">Recent searches:</p>
+      <div class="recent__tags" id="recentTags"></div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Paw Rescue — Demo project. Weather data by <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeather</a>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

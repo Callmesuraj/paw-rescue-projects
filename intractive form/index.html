@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Signup — Paw Rescue</title>
+  <meta name="description" content="Sign up to volunteer with Paw Rescue and help us feed, rescue, and treat stray animals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+    <div class="form-card">
+
+      <div class="form-card__header">
+        <span class="brand">
+          <span class="brand__dot" aria-hidden="true"></span>
+          Paw Rescue
+        </span>
+        <h1 class="form-card__title">Become a volunteer</h1>
+        <p class="form-card__sub">Two hours a week is enough to keep a corner warm. Fill in your details and we'll be in touch.</p>
+      </div>
+
+      <!-- Success state (hidden by default) -->
+      <div class="success-panel" id="successPanel" hidden>
+        <div class="success-panel__icon" aria-hidden="true">
+          <svg viewBox="0 0 52 52">
+            <circle cx="26" cy="26" r="25" class="success-circle"/>
+            <path d="M15 27 L23 35 L38 18" class="success-check"/>
+          </svg>
+        </div>
+        <h2 class="success-panel__title">You're on the list!</h2>
+        <p class="success-panel__text">Thanks for stepping up. We'll reach out within 2–3 days with next steps.</p>
+        <button type="button" class="btn btn--ghost" id="resetBtn">Sign up another volunteer</button>
+      </div>
+
+      <!-- Form -->
+      <form id="volunteerForm" class="form" novalidate>
+
+        <div class="field">
+          <label for="fullName" class="field__label">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            class="field__input"
+            placeholder="e.g. Anjali Mehra"
+            autocomplete="name"
+            aria-describedby="fullNameError"
+          >
+          <p class="field__error" id="fullNameError" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="email" class="field__label">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="field__input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            aria-describedby="emailError"
+          >
+          <p class="field__error" id="emailError" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone" class="field__label">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="field__input"
+            placeholder="10-digit mobile number"
+            autocomplete="tel"
+            aria-describedby="phoneError"
+          >
+          <p class="field__error" id="phoneError" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="password" class="field__label">Create a password</label>
+          <div class="field__password-wrap">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="field__input"
+              placeholder="At least 8 characters"
+              autocomplete="new-password"
+              aria-describedby="passwordError passwordHint"
+            >
+            <button type="button" class="field__toggle" id="togglePassword" aria-label="Show password">
+              <svg viewBox="0 0 24 24" class="eye-icon"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="strength-meter" id="strengthMeter" aria-hidden="true">
+            <span class="strength-meter__bar" data-level="1"></span>
+            <span class="strength-meter__bar" data-level="2"></span>
+            <span class="strength-meter__bar" data-level="3"></span>
+          </div>
+          <p class="field__hint" id="passwordHint">Use 8+ characters with a number and a letter.</p>
+          <p class="field__error" id="passwordError" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">Sign me up</button>
+      </form>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

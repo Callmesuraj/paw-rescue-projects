@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — Paw Rescue</title>
+  <meta name="description" content="Learn how Paw Rescue responds to stray animal emergencies in your area.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config — brand colors + fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pr-bg':      '#1A1714',
+            'pr-soft':    '#221E1A',
+            'pr-card':    '#2B2520',
+            'pr-amber':   '#E8A24B',
+            'pr-amber-lt':'#F2C385',
+            'pr-sage':    '#7C9070',
+            'pr-cream':   '#F7F1E8',
+            'pr-dim':     '#C9C0B3',
+            'pr-line':    'rgba(247,241,232,0.1)',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body:    ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'amber-glow': '0 0 24px 4px rgba(232,162,75,0.2)',
+            'card':       '0 8px 32px rgba(0,0,0,0.3)',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Fraunces', serif; }
+
+    /* Connector line between steps */
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(50% + 28px);
+      width: calc(100% - 56px);
+      height: 1px;
+      background: rgba(247, 241, 232, 0.12);
+    }
+
+    /* Glow pulse on dot */
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 8px 2px rgba(232,162,75,0.4); }
+      50%       { box-shadow: 0 0 18px 6px rgba(232,162,75,0.65); }
+    }
+    .dot-glow { animation: glow-pulse 3s ease-in-out infinite; }
+
+    /* Fade up on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-pr-bg text-pr-cream min-h-screen font-body">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="sticky top-0 z-50 bg-pr-bg/85 backdrop-blur-md border-b border-pr-line">
+    <nav class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-display font-semibold text-[1.05rem]">
+        <span class="w-2.5 h-2.5 rounded-full bg-pr-amber dot-glow"></span>
+        Paw Rescue
+      </a>
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-pr-dim">
+        <li><a href="#" class="hover:text-pr-amber-lt transition-colors">Home</a></li>
+        <li><a href="#how" class="hover:text-pr-amber-lt transition-colors">How It Works</a></li>
+        <li><a href="#team" class="hover:text-pr-amber-lt transition-colors">Team</a></li>
+        <li>
+          <a href="#contact" class="bg-pr-sage text-pr-bg px-4 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+            Volunteer
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO STRIP ===== -->
+    <section class="max-w-5xl mx-auto px-5 pt-16 pb-10 text-center">
+      <p class="text-pr-sage text-xs font-semibold uppercase tracking-widest mb-3">Simple. Fast. Always there.</p>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight mb-4">
+        How we show up<br>
+        <span class="text-pr-amber">when it matters.</span>
+      </h1>
+      <p class="text-pr-dim max-w-xl mx-auto text-base">
+        From your first call to a safe animal — here's exactly what happens when you reach out to Paw Rescue.
+      </p>
+    </section>
+
+    <!-- ===== HOW IT WORKS — 4 STEPS ===== -->
+    <section class="max-w-5xl mx-auto px-5 pb-20" id="how">
+
+      <!-- Step number row (desktop connector) -->
+      <div class="hidden md:grid grid-cols-4 gap-6 mb-0 relative">
+        <div class="relative step-connector flex flex-col items-center">
+          <div class="w-14 h-14 rounded-full bg-pr-amber flex items-center justify-center text-pr-bg font-bold text-lg shadow-amber-glow">1</div>
+        </div>
+        <div class="relative step-connector flex flex-col items-center">
+          <div class="w-14 h-14 rounded-full bg-pr-card border border-pr-amber/40 flex items-center justify-center text-pr-amber font-bold text-lg">2</div>
+        </div>
+        <div class="relative step-connector flex flex-col items-center">
+          <div class="w-14 h-14 rounded-full bg-pr-card border border-pr-amber/40 flex items-center justify-center text-pr-amber font-bold text-lg">3</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-full bg-pr-card border border-pr-sage/60 flex items-center justify-center text-pr-sage font-bold text-lg">4</div>
+        </div>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-6">
+
+        <!-- Step 1 -->
+        <article class="reveal bg-pr-card border border-pr-line rounded-2xl p-6 shadow-card hover:-translate-y-1 transition-transform duration-200">
+          <div class="w-10 h-10 mb-4 md:hidden rounded-full bg-pr-amber flex items-center justify-center text-pr-bg font-bold">1</div>
+          <div class="mb-4">
+            <svg viewBox="0 0 40 40" class="w-9 h-9 text-pr-amber" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M8 8h24v20H8z M14 28v4 M26 28v4 M11 32h18"/>
+              <path d="M14 16l4 4 8-8"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-pr-cream text-base mb-2">Spot & Report</h3>
+          <p class="text-pr-dim text-sm leading-relaxed">See an injured or distressed stray? Call our helpline or drop a WhatsApp message with location.</p>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="reveal bg-pr-card border border-pr-line rounded-2xl p-6 shadow-card hover:-translate-y-1 transition-transform duration-200" style="transition-delay: 0.08s">
+          <div class="w-10 h-10 mb-4 md:hidden rounded-full border border-pr-amber/40 flex items-center justify-center text-pr-amber font-bold">2</div>
+          <div class="mb-4">
+            <svg viewBox="0 0 40 40" class="w-9 h-9 text-pr-amber" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="20" cy="17" r="7"/>
+              <path d="M20 24c-7 0-12 3-12 6v2h24v-2c0-3-5-6-12-6z"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-pr-cream text-base mb-2">We Assign a Team</h3>
+          <p class="text-pr-dim text-sm leading-relaxed">The nearest available volunteer pair gets notified instantly. Average response time: under 40 minutes.</p>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="reveal bg-pr-card border border-pr-line rounded-2xl p-6 shadow-card hover:-translate-y-1 transition-transform duration-200" style="transition-delay: 0.16s">
+          <div class="w-10 h-10 mb-4 md:hidden rounded-full border border-pr-amber/40 flex items-center justify-center text-pr-amber font-bold">3</div>
+          <div class="mb-4">
+            <svg viewBox="0 0 40 40" class="w-9 h-9 text-pr-amber" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M20 6 C10 6 6 14 6 20 C6 28 13 34 20 34 C27 34 34 28 34 20"/>
+              <path d="M26 8 L34 8 L34 16"/>
+              <path d="M20 15 L20 21 L24 24"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-pr-cream text-base mb-2">On-Site Aid</h3>
+          <p class="text-pr-dim text-sm leading-relaxed">Team arrives with food, first-aid kit, and a carry cage. Basic treatment is given on the spot.</p>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="reveal bg-pr-card border border-pr-sage/20 rounded-2xl p-6 shadow-card hover:-translate-y-1 transition-transform duration-200" style="transition-delay: 0.24s">
+          <div class="w-10 h-10 mb-4 md:hidden rounded-full border border-pr-sage/60 flex items-center justify-center text-pr-sage font-bold">4</div>
+          <div class="mb-4">
+            <svg viewBox="0 0 40 40" class="w-9 h-9 text-pr-sage" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M20 8 C14 8 8 13 8 18 C8 24 14 30 20 34 C26 30 32 24 32 18 C32 13 26 8 20 8Z"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-pr-cream text-base mb-2">Safe & Cared For</h3>
+          <p class="text-pr-dim text-sm leading-relaxed">Animal is moved to a safe shelter if needed. Recovery, vaccination, and adoption matching follows.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== STATS STRIP ===== -->
+    <section class="bg-pr-soft border-y border-pr-line">
+      <div class="max-w-5xl mx-auto px-5 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="reveal">
+          <p class="font-display text-3xl font-semibold text-pr-amber">12k+</p>
+          <p class="text-pr-dim text-sm mt-1">Meals served</p>
+        </div>
+        <div class="reveal" style="transition-delay:0.08s">
+          <p class="font-display text-3xl font-semibold text-pr-amber">800+</p>
+          <p class="text-pr-dim text-sm mt-1">Rescues completed</p>
+        </div>
+        <div class="reveal" style="transition-delay:0.16s">
+          <p class="font-display text-3xl font-semibold text-pr-amber">24/7</p>
+          <p class="text-pr-dim text-sm mt-1">Always on call</p>
+        </div>
+        <div class="reveal" style="transition-delay:0.24s">
+          <p class="font-display text-3xl font-semibold text-pr-sage">340+</p>
+          <p class="text-pr-dim text-sm mt-1">Adoptions facilitated</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="max-w-xl mx-auto px-5 py-20 text-center" id="contact">
+      <h2 class="font-display text-3xl font-semibold mb-3">Ready to walk with us?</h2>
+      <p class="text-pr-dim mb-7">Two hours a week. That's all it takes to make sure no animal goes unnoticed tonight.</p>
+      <a href="#" class="inline-flex items-center gap-2 bg-pr-amber text-pr-bg font-semibold px-7 py-3 rounded-full shadow-amber-glow hover:-translate-y-1 transition-transform duration-200">
+        Become a Volunteer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-pr-line">
+    <div class="max-w-5xl mx-auto px-5 py-8 flex flex-wrap items-center justify-between gap-4">
+      <span class="flex items-center gap-2 font-display font-semibold text-sm">
+        <span class="w-2 h-2 rounded-full bg-pr-amber"></span>
+        Paw Rescue
+      </span>
+      <ul class="flex gap-5 text-sm text-pr-dim">
+        <li><a href="#" class="hover:text-pr-amber-lt transition-colors">Home</a></li>
+        <li><a href="#how" class="hover:text-pr-amber-lt transition-colors">How It Works</a></li>
+        <li><a href="#contact" class="hover:text-pr-amber-lt transition-colors">Volunteer</a></li>
+      </ul>
+      <p class="text-xs text-pr-dim opacity-60">© 2026 Paw Rescue. Demo project.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
