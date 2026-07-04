@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Rescue — Component Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <span class="brand-dot"></span>
+      Paw Rescue UI
+    </div>
+    <nav class="sidebar__nav" aria-label="Component navigation">
+      <p class="sidebar__section-label">Getting Started</p>
+      <a href="#overview" class="sidebar__link">Overview</a>
+      <a href="#tokens" class="sidebar__link">Design Tokens</a>
+
+      <p class="sidebar__section-label">Components</p>
+      <a href="#buttons" class="sidebar__link">Buttons</a>
+      <a href="#badges" class="sidebar__link">Badges</a>
+      <a href="#inputs" class="sidebar__link">Inputs</a>
+      <a href="#cards" class="sidebar__link">Cards</a>
+      <a href="#alerts" class="sidebar__link">Alerts</a>
+      <a href="#avatars" class="sidebar__link">Avatars & Tags</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content" id="main-content">
+
+    <!-- HEADER -->
+    <header class="topbar">
+      <button class="topbar__toggle" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <span class="topbar__title">Component Library</span>
+      <span class="topbar__version">v1.0.0</span>
+    </header>
+
+    <div class="doc-content">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="doc-section">
+        <h1 class="doc-h1">Paw Rescue UI</h1>
+        <p class="doc-lead">A reusable component library built for the Paw Rescue brand. All components follow a consistent design language — warm amber/charcoal palette, accessible by default, and customizable via CSS variables.</p>
+        <div class="callout callout--info">
+          <strong>Usage:</strong> Copy any component's HTML + its CSS class from <code>style.css</code>. All components use CSS custom properties so they can be themed by changing the root variables.
+        </div>
+      </section>
+
+      <!-- DESIGN TOKENS -->
+      <section id="tokens" class="doc-section">
+        <h2 class="doc-h2">Design Tokens</h2>
+        <p class="doc-body">All components use these CSS custom properties defined in <code>:root</code>.</p>
+
+        <div class="token-grid">
+          <div class="token-item">
+            <div class="token-swatch" style="background:#1A1714"></div>
+            <div class="token-info">
+              <code>--bg</code>
+              <span>#1A1714</span>
+            </div>
+          </div>
+          <div class="token-item">
+            <div class="token-swatch" style="background:#2B2520"></div>
+            <div class="token-info">
+              <code>--card</code>
+              <span>#2B2520</span>
+            </div>
+          </div>
+          <div class="token-item">
+            <div class="token-swatch" style="background:#E8A24B; border-color: rgba(255,255,255,0.1)"></div>
+            <div class="token-info">
+              <code>--amber</code>
+              <span>#E8A24B</span>
+            </div>
+          </div>
+          <div class="token-item">
+            <div class="token-swatch" style="background:#7C9070"></div>
+            <div class="token-info">
+              <code>--sage</code>
+              <span>#7C9070</span>
+            </div>
+          </div>
+          <div class="token-item">
+            <div class="token-swatch" style="background:#F7F1E8; border-color: rgba(255,255,255,0.1)"></div>
+            <div class="token-info">
+              <code>--cream</code>
+              <span>#F7F1E8</span>
+            </div>
+          </div>
+          <div class="token-item">
+            <div class="token-swatch" style="background:#E0664E"></div>
+            <div class="token-info">
+              <code>--error</code>
+              <span>#E0664E</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTTONS -->
+      <section id="buttons" class="doc-section">
+        <h2 class="doc-h2">Buttons</h2>
+        <p class="doc-body">Three variants — Primary, Ghost, and Danger. All support disabled state and focus styles for keyboard navigation.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo">
+            <button class="pr-btn pr-btn--primary">Primary</button>
+            <button class="pr-btn pr-btn--ghost">Ghost</button>
+            <button class="pr-btn pr-btn--danger">Danger</button>
+            <button class="pr-btn pr-btn--primary" disabled>Disabled</button>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-btn">Copy</button></div>
+            <pre id="code-btn"><code>&lt;button class="pr-btn pr-btn--primary"&gt;Primary&lt;/button&gt;
+&lt;button class="pr-btn pr-btn--ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="pr-btn pr-btn--danger"&gt;Danger&lt;/button&gt;
+&lt;button class="pr-btn pr-btn--primary" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <h3 class="doc-h3">Sizes</h3>
+        <div class="preview-box">
+          <div class="preview-box__demo">
+            <button class="pr-btn pr-btn--primary pr-btn--sm">Small</button>
+            <button class="pr-btn pr-btn--primary">Medium</button>
+            <button class="pr-btn pr-btn--primary pr-btn--lg">Large</button>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-sizes">Copy</button></div>
+            <pre id="code-sizes"><code>&lt;button class="pr-btn pr-btn--primary pr-btn--sm"&gt;Small&lt;/button&gt;
+&lt;button class="pr-btn pr-btn--primary"&gt;Medium&lt;/button&gt;
+&lt;button class="pr-btn pr-btn--primary pr-btn--lg"&gt;Large&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- BADGES -->
+      <section id="badges" class="doc-section">
+        <h2 class="doc-h2">Badges</h2>
+        <p class="doc-body">Used for status indicators, risk levels, and labels. Semantic color variants with dot indicators.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo">
+            <span class="pr-badge pr-badge--success"><span class="pr-badge__dot"></span>Low Risk</span>
+            <span class="pr-badge pr-badge--warning"><span class="pr-badge__dot"></span>Medium Risk</span>
+            <span class="pr-badge pr-badge--danger"><span class="pr-badge__dot"></span>High Risk</span>
+            <span class="pr-badge pr-badge--neutral"><span class="pr-badge__dot"></span>Inactive</span>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-badge">Copy</button></div>
+            <pre id="code-badge"><code>&lt;span class="pr-badge pr-badge--success"&gt;
+  &lt;span class="pr-badge__dot"&gt;&lt;/span&gt;Low Risk
+&lt;/span&gt;
+&lt;span class="pr-badge pr-badge--warning"&gt;
+  &lt;span class="pr-badge__dot"&gt;&lt;/span&gt;Medium Risk
+&lt;/span&gt;
+&lt;span class="pr-badge pr-badge--danger"&gt;
+  &lt;span class="pr-badge__dot"&gt;&lt;/span&gt;High Risk
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- INPUTS -->
+      <section id="inputs" class="doc-section">
+        <h2 class="doc-h2">Inputs</h2>
+        <p class="doc-body">Form inputs with three states — default, error, and success. Includes helper text and label patterns.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo preview-box__demo--col">
+            <div class="pr-field">
+              <label class="pr-field__label" for="demo-default">City name</label>
+              <input type="text" id="demo-default" class="pr-field__input" placeholder="e.g. Delhi">
+              <p class="pr-field__hint">Enter the city where you spotted a stray.</p>
+            </div>
+            <div class="pr-field pr-field--error">
+              <label class="pr-field__label" for="demo-error">Email address</label>
+              <input type="email" id="demo-error" class="pr-field__input" value="notanemail">
+              <p class="pr-field__message">Please enter a valid email address.</p>
+            </div>
+            <div class="pr-field pr-field--success">
+              <label class="pr-field__label" for="demo-success">Phone number</label>
+              <input type="tel" id="demo-success" class="pr-field__input" value="9876543210">
+              <p class="pr-field__message">Looks good!</p>
+            </div>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-input">Copy</button></div>
+            <pre id="code-input"><code>&lt;div class="pr-field"&gt;
+  &lt;label class="pr-field__label" for="city"&gt;City name&lt;/label&gt;
+  &lt;input type="text" id="city" class="pr-field__input" placeholder="e.g. Delhi"&gt;
+  &lt;p class="pr-field__hint"&gt;Helper text here.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Error state --&gt;
+&lt;div class="pr-field pr-field--error"&gt; ... &lt;/div&gt;
+
+&lt;!-- Success state --&gt;
+&lt;div class="pr-field pr-field--success"&gt; ... &lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section id="cards" class="doc-section">
+        <h2 class="doc-h2">Cards</h2>
+        <p class="doc-body">Two card variants — Feature card with icon and Stat card for metrics display.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo">
+            <article class="pr-card">
+              <div class="pr-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M24 6C17 6 12 11 12 18c0 8 12 24 12 24s12-16 12-24c0-7-5-12-12-12z"/><circle cx="24" cy="18" r="5"/></svg>
+              </div>
+              <h3 class="pr-card__title">Feeding Drives</h3>
+              <p class="pr-card__text">Regular routes, every day. Hot meals in every corner.</p>
+            </article>
+            <div class="pr-stat-card">
+              <p class="pr-stat-card__value">12k+</p>
+              <p class="pr-stat-card__label">Meals served</p>
+            </div>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-card">Copy</button></div>
+            <pre id="code-card"><code>&lt;article class="pr-card"&gt;
+  &lt;div class="pr-card__icon"&gt;...svg...&lt;/div&gt;
+  &lt;h3 class="pr-card__title"&gt;Title&lt;/h3&gt;
+  &lt;p class="pr-card__text"&gt;Description&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;div class="pr-stat-card"&gt;
+  &lt;p class="pr-stat-card__value"&gt;12k+&lt;/p&gt;
+  &lt;p class="pr-stat-card__label"&gt;Meals served&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALERTS -->
+      <section id="alerts" class="doc-section">
+        <h2 class="doc-h2">Alerts</h2>
+        <p class="doc-body">Four semantic alert variants for user feedback — info, success, warning, and error.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo preview-box__demo--col">
+            <div class="pr-alert pr-alert--info" role="status">
+              <strong>Info:</strong> Rescue team has been notified and is on the way.
+            </div>
+            <div class="pr-alert pr-alert--success" role="status">
+              <strong>Success:</strong> Your volunteer signup was submitted!
+            </div>
+            <div class="pr-alert pr-alert--warning" role="alert">
+              <strong>Warning:</strong> High heat today — strays need extra water.
+            </div>
+            <div class="pr-alert pr-alert--error" role="alert">
+              <strong>Error:</strong> Could not fetch weather data. Try again.
+            </div>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-alert">Copy</button></div>
+            <pre id="code-alert"><code>&lt;div class="pr-alert pr-alert--info" role="status"&gt;Info message&lt;/div&gt;
+&lt;div class="pr-alert pr-alert--success" role="status"&gt;Success message&lt;/div&gt;
+&lt;div class="pr-alert pr-alert--warning" role="alert"&gt;Warning message&lt;/div&gt;
+&lt;div class="pr-alert pr-alert--error" role="alert"&gt;Error message&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVATARS & TAGS -->
+      <section id="avatars" class="doc-section">
+        <h2 class="doc-h2">Avatars & Tags</h2>
+        <p class="doc-body">Avatar component for user/volunteer display, and Tag component for labelling categories.</p>
+
+        <div class="preview-box">
+          <div class="preview-box__demo">
+            <div class="pr-avatar pr-avatar--amber">S</div>
+            <div class="pr-avatar pr-avatar--sage">K</div>
+            <div class="pr-avatar pr-avatar--dim">R</div>
+            <span class="pr-tag">Rescue</span>
+            <span class="pr-tag pr-tag--amber">Medical</span>
+            <span class="pr-tag pr-tag--sage">Adoption</span>
+          </div>
+          <div class="preview-box__code">
+            <div class="code-header"><span>HTML</span><button class="copy-btn" data-target="code-avatar">Copy</button></div>
+            <pre id="code-avatar"><code>&lt;div class="pr-avatar pr-avatar--amber"&gt;S&lt;/div&gt;
+&lt;div class="pr-avatar pr-avatar--sage"&gt;K&lt;/div&gt;
+
+&lt;span class="pr-tag"&gt;Rescue&lt;/span&gt;
+&lt;span class="pr-tag pr-tag--amber"&gt;Medical&lt;/span&gt;
+&lt;span class="pr-tag pr-tag--sage"&gt;Adoption&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
